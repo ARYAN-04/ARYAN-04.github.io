@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ARYAN-04 — Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Sora:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  /* ── Catppuccin Mocha ── */
+  :root {
+    --base:    #1e1e2e;
+    --mantle:  #181825;
+    --crust:   #11111b;
+    --surface0:#313244;
+    --surface1:#45475a;
+    --surface2:#585b70;
+    --overlay0:#6c7086;
+    --overlay1:#7f849c;
+    --overlay2:#9399b2;
+    --subtext0:#a6adc8;
+    --subtext1:#bac2de;
+    --text:    #cdd6f4;
+    --lavender:#b4befe;
+    --blue:    #89b4fa;
+    --sapphire:#74c7ec;
+    --sky:     #89dceb;
+    --teal:    #94e2d5;
+    --green:   #a6e3a1;
+    --yellow:  #f9e2af;
+    --peach:   #fab387;
+    --maroon:  #eba0ac;
+    --red:     #f38ba8;
+    --mauve:   #cba6f7;
+    --pink:    #f5c2e7;
+    --flamingo:#f2cdcd;
+    --rosewater:#f5e0dc;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--base);
+    color: var(--text);
+    font-family: 'Sora', sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+
+  /* subtle dot-grid background */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: radial-gradient(circle, var(--surface0) 1px, transparent 1px);
+    background-size: 28px 28px;
+    opacity: 0.35;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: color-mix(in srgb, var(--mantle) 90%, transparent);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--surface0);
+    padding: 0 2rem;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-logo {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    color: var(--mauve);
+    text-decoration: none;
+    letter-spacing: 0.05em;
+  }
+
+  .nav-logo span { color: var(--overlay1); }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+  }
+
+  nav ul a {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--subtext1);
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    transition: color 0.2s;
+  }
+
+  nav ul a:hover { color: var(--mauve); }
+
+  /* ── LAYOUT ── */
+  main {
+    position: relative;
+    z-index: 1;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  section {
+    padding: 6rem 0 4rem;
+  }
+
+  section:first-child { padding-top: 8rem; }
+
+  .section-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: var(--mauve);
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+
+  h1 {
+    font-size: clamp(2.2rem, 5vw, 3.4rem);
+    font-weight: 600;
+    line-height: 1.15;
+    color: var(--text);
+    margin-bottom: 1.25rem;
+  }
+
+  h1 .accent { color: var(--mauve); }
+
+  h2 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  h2::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--surface1);
+  }
+
+  p { color: var(--subtext1); margin-bottom: 1rem; }
+  p:last-child { margin-bottom: 0; }
+
+  a { color: var(--blue); text-decoration: none; }
+  a:hover { color: var(--lavender); }
+
+  /* ── HERO ── */
+  .hero-links {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+  }
+
+  .btn {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    border: 1px solid;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .btn-primary {
+    background: var(--mauve);
+    color: var(--crust);
+    border-color: var(--mauve);
+  }
+
+  .btn-primary:hover {
+    background: var(--lavender);
+    border-color: var(--lavender);
+    color: var(--crust);
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--subtext1);
+    border-color: var(--surface1);
+  }
+
+  .btn-outline:hover {
+    border-color: var(--mauve);
+    color: var(--mauve);
+  }
+
+  /* ── TECH PILL ── */
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-weight: 400;
+    white-space: nowrap;
+  }
+
+  .pill-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* language color map */
+  .lang-python       { background:#3572A5; }
+  .lang-javascript   { background:#f1e05a; }
+  .lang-typescript   { background:#3178c6; }
+  .lang-go           { background:#00ADD8; }
+  .lang-rust         { background:#dea584; }
+  .lang-java         { background:#b07219; }
+  .lang-c            { background:#555555; }
+  .lang-cpp          { background:#f34b7d; }
+  .lang-html         { background:#e34c26; }
+  .lang-css          { background:#563d7c; }
+  .lang-shell        { background:#89e051; }
+  .lang-jupyter      { background:#DA5B0B; }
+  .lang-default      { background:#8b949e; }
+
+  /* topic badge colours */
+  .pill-topic { background: var(--surface0); color: var(--subtext1); border: 1px solid var(--surface1); }
+  .pill-lang  { background: var(--surface0); color: var(--blue); border: 1px solid color-mix(in srgb, var(--blue) 30%, transparent); }
+
+  /* ── ABOUT ── */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  @media (max-width: 600px) { .about-grid { grid-template-columns: 1fr; } }
+
+  .stat-card {
+    background: var(--mantle);
+    border: 1px solid var(--surface0);
+    border-radius: 10px;
+    padding: 1.25rem 1.5rem;
+  }
+
+  .stat-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    color: var(--overlay1);
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+  }
+
+  .stat-value {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--mauve);
+  }
+
+  /* ── SKILLS ── */
+  .skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  /* ── PROJECTS ── */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+    gap: 1rem;
+  }
+
+  @media (max-width: 640px) { .projects-grid { grid-template-columns: 1fr; } }
+
+  .project-card {
+    background: var(--mantle);
+    border: 1px solid var(--surface0);
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: border-color 0.2s, transform 0.2s;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    text-decoration: none;
+  }
+
+  .project-card:hover {
+    border-color: var(--mauve);
+    transform: translateY(-2px);
+    color: inherit;
+  }
+
+  .project-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+
+  .project-name {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text);
+  }
+
+  .project-icon {
+    font-size: 14px;
+    color: var(--overlay1);
+    flex-shrink: 0;
+  }
+
+  .project-desc {
+    font-size: 13px;
+    color: var(--subtext0);
+    line-height: 1.6;
+    flex: 1;
+  }
+
+  .project-meta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--overlay1);
+  }
+
+  .project-meta span {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .project-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+
+  .loading-card {
+    background: var(--mantle);
+    border: 1px solid var(--surface0);
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 160px;
+    color: var(--overlay0);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+  }
+
+  /* ── RESUME ── */
+  .resume-section {
+    margin-bottom: 2rem;
+  }
+
+  .resume-section h3 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--mauve);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--surface0);
+  }
+
+  .resume-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    padding: 0.9rem 1rem;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+    background: var(--mantle);
+    border: 1px solid var(--surface0);
+    transition: border-color 0.2s;
+  }
+
+  .resume-item:hover { border-color: var(--surface1); }
+
+  .resume-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .resume-role {
+    font-weight: 500;
+    color: var(--text);
+    font-size: 14px;
+  }
+
+  .resume-date {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--overlay1);
+  }
+
+  .resume-org {
+    font-size: 13px;
+    color: var(--blue);
+  }
+
+  .resume-detail {
+    font-size: 13px;
+    color: var(--subtext0);
+    margin-top: 0.25rem;
+  }
+
+  /* ── CONTACT ── */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+  }
+
+  @media (max-width: 640px) { .contact-grid { grid-template-columns: 1fr; } }
+
+  .contact-card {
+    background: var(--mantle);
+    border: 1px solid var(--surface0);
+    border-radius: 10px;
+    padding: 1rem 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    text-decoration: none;
+    transition: all 0.2s;
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  .contact-card:hover {
+    border-color: var(--mauve);
+    color: inherit;
+  }
+
+  .contact-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background: var(--surface0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: var(--mauve);
+  }
+
+  .contact-icon svg { width: 18px; height: 18px; fill: currentColor; }
+  .contact-text { min-width: 0; }
+
+  .contact-label { font-size: 12px; color: var(--subtext0); white-space: nowrap; }
+  .contact-value { font-size: 13px; font-weight: 500; color: var(--text); word-break: break-all; line-height: 1.4; }
+
+  /* ── FOOTER ── */
+  footer {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 2rem;
+    border-top: 1px solid var(--surface0);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--overlay0);
+    letter-spacing: 0.05em;
+  }
+
+  /* ── LANGUAGE BAR ── */
+  .lang-bar-wrap { margin-top: 1rem; }
+
+  .lang-bar {
+    display: flex;
+    border-radius: 6px;
+    overflow: hidden;
+    height: 8px;
+    margin-bottom: 0.75rem;
+  }
+
+  .lang-bar-seg { height: 100%; transition: flex 0.3s; }
+
+  .lang-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .lang-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--subtext0);
+  }
+
+  .lang-legend-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* ── ERROR / EMPTY ── */
+  .api-error {
+    background: var(--mantle);
+    border: 1px solid var(--surface0);
+    border-radius: 10px;
+    padding: 2rem;
+    text-align: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--overlay1);
+  }
+
+  /* cursor blink */
+  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+  .cursor { animation: blink 1s step-end infinite; color: var(--mauve); }
+
+  /* fade-in on section */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .fade-in { animation: fadeUp 0.5s ease both; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="#hero">~/aryan<span>_04</span><span class="cursor">_</span></a>
+  <ul>
+    <li><a href="#about">about</a></li>
+    <li><a href="#projects">projects</a></li>
+    <li><a href="#resume">resume</a></li>
+    <li><a href="#contact">contact</a></li>
+  </ul>
+</nav>
+
+<main>
+
+  <!-- ── HERO ── -->
+  <section id="hero">
+    <p class="section-label">// hello world</p>
+    <h1>Hey, I'm <span class="accent">Aryan</span><br>I build things.</h1>
+    <p style="max-width:560px; font-size:16px;">
+      An undergraduate student based in New Delhi, currently looking for summer internship opportunities in AI and Data roles.
+    </p>
+    <div class="hero-links">
+      <a class="btn btn-primary" href="#projects">View Projects</a>
+      <a class="btn btn-outline" href="https://github.com/ARYAN-04" target="_blank">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+        GitHub
+      </a>
+      <a class="btn btn-outline" href="https://linkedin.com/in/aryan-dwivedi-5905a51ba/" target="_blank">LinkedIn</a>
+      <a class="btn btn-outline" href="#contact">Contact</a>
+    </div>
+  </section>
+
+  <!-- ── ABOUT ── -->
+  <section id="about">
+    <p class="section-label">// about_me</p>
+    <h2>About</h2>
+    <p style="max-width:620px; margin-bottom:2rem;">
+      B.Tech CSE (AI/ML) student at Maharaja Surajmal Institute of Technology, New Delhi. I've interned at PwC designing AI frameworks and at Airports Authority of India working in cybersecurity operations. I build data pipelines, containerised systems, and backend tooling.
+    </p>
+
+    <div id="gh-stats" style="margin-bottom:2rem;">
+      <div class="stat-card" style="max-width:300px;">
+        <div class="stat-label">Loading GitHub stats…</div>
+      </div>
+    </div>
+
+    <p class="section-label" style="margin-bottom:0.75rem;">// languages_across_repos</p>
+    <div id="lang-bar-container" class="lang-bar-wrap">
+      <div class="loading-card" style="height:60px;">fetching language data…</div>
+    </div>
+
+    <p class="section-label" style="margin-top:2rem; margin-bottom:0.75rem;">// tech_stack</p>
+    <div class="skills-grid" id="skills-static">
+      <!-- Languages & Scripting -->
+      <span class="pill pill-lang"><span class="pill-dot" style="background:#3572A5"></span>Python</span>
+      <span class="pill pill-topic">Bash / Shell Scripting</span>
+      <span class="pill pill-topic">SQL</span>
+      <!-- Data & ML -->
+      <span class="pill pill-topic">Pandas</span>
+      <span class="pill pill-topic">NumPy</span>
+      <span class="pill pill-topic">TensorFlow</span>
+      <span class="pill pill-topic">Scikit-learn</span>
+      <span class="pill pill-topic">Matplotlib</span>
+      <span class="pill pill-topic">Plotly</span>
+      <span class="pill pill-topic">NLP / NLTK</span>
+      <span class="pill pill-topic">Jupyter</span>
+      <!-- DevOps & Infrastructure -->
+      <span class="pill pill-topic">Docker</span>
+      <span class="pill pill-topic">Kubernetes</span>
+      <span class="pill pill-topic">GitHub Actions</span>
+      <span class="pill pill-topic">CI/CD</span>
+      <span class="pill pill-topic">Linux</span>
+      <span class="pill pill-topic">uv</span>
+      <!-- Cloud & Databases -->
+      <span class="pill pill-topic">AWS</span>
+      <span class="pill pill-topic">PostgreSQL</span>
+      <!-- Tools -->
+      <span class="pill pill-topic">Git</span>
+      <span class="pill pill-topic">GitHub</span>
+      <span class="pill pill-topic">VS Code</span>
+      <span class="pill pill-topic">Power BI</span>
+      <span class="pill pill-topic">Excel</span>
+    </div>
+  </section>
+
+  <!-- ── PROJECTS ── -->
+  <section id="projects">
+    <p class="section-label">// projects</p>
+    <h2>Projects</h2>
+    <div id="projects-grid" class="projects-grid">
+      <div class="loading-card">fetching repos from github…</div>
+    </div>
+  </section>
+
+  <!-- ── RESUME ── -->
+  <section id="resume">
+    <p class="section-label">// resume</p>
+    <h2>Resume</h2>
+
+    <div class="resume-section">
+      <h3>Education</h3>
+      <div class="resume-item">
+        <div class="resume-item-header">
+          <span class="resume-role">B.Tech in Computer Science Engineering (AI & ML)</span>
+          <span class="resume-date">2023 – 2027</span>
+        </div>
+        <span class="resume-org">Maharaja Surajmal Institute of Technology (affiliated to GGSIPU)</span>
+        <span class="resume-detail">CGPA: 8.88 / 10.0</span>
+      </div>
+    </div>
+
+    <div class="resume-section">
+      <h3>Experience</h3>
+      <div class="resume-item">
+        <div class="resume-item-header">
+          <span class="resume-role">Advisory Intern — One Consulting Practice, Integrated Advisory Division</span>
+          <span class="resume-date">June 2025 – August 2025</span>
+        </div>
+        <span class="resume-org">PricewaterhouseCoopers Pvt. Ltd. · Gurgaon</span>
+        <span class="resume-detail">Designed AI implementation frameworks and ROI models for passenger experience enhancement initiatives at scale. Conducted technical market analysis and scenario modelling to support enterprise acquisition assessment.</span>
+      </div>
+      <div class="resume-item">
+        <div class="resume-item-header">
+          <span class="resume-role">Intern — Cyber Security Operations Cell</span>
+          <span class="resume-date">July 2024 – August 2024</span>
+        </div>
+        <span class="resume-org">Airports Authority of India · Safdarjung Airport</span>
+        <span class="resume-detail">Mapped enterprise network architecture and critical security infrastructure. Documented firewall configurations, IDS systems, and access control mechanisms for a critical infrastructure environment.</span>
+      </div>
+    </div>
+
+    <div class="resume-section">
+      <h3>Certifications</h3>
+      <div class="skills-grid">
+        <span class="pill pill-topic">Red Hat DO080</span>
+        <span class="pill pill-topic">Anthropic AI Fluency</span>
+        <span class="pill pill-topic">HackerRank SQL (Intermediate)</span>
+        <span class="pill pill-topic">Fortinet FCA & FCF</span>
+        <span class="pill pill-topic">McKinsey Forward Program</span>
+        <span class="pill pill-topic">NPTEL — Data Science for Engineers</span>
+        <span class="pill pill-topic">NPTEL — Social Network Analysis</span>
+        <span class="pill pill-topic">NPTEL — Bayesian Data Analytics</span>
+        <span class="pill pill-topic">NPTEL — Cognitive Psychology</span>
+      </div>
+    </div>
+
+    <div class="resume-section">
+      <h3>Positions of Responsibility</h3>
+      <div class="resume-item">
+        <span class="resume-role">Vice President — Debating Society, MSIT</span>
+      </div>
+      <div class="resume-item">
+        <span class="resume-role">Operational Lead — Google Developer Student Club</span>
+      </div>
+      <div class="resume-item">
+        <span class="resume-role">Public Relations Secretary — IEEE Computer Society MSIT Chapter</span>
+      </div>
+      <div class="resume-item">
+        <span class="resume-role">Tournament Director — MSIT Fundraiser Debate 2024 (raised ₹38,000 for Women Empowerment)</span>
+      </div>
+      <div class="resume-item">
+        <span class="resume-role">Session Moderator — ICAIA (International Conference on AI & Applications, Springer Journal)</span>
+      </div>
+    </div>
+
+    <div style="margin-top:1rem;">
+      <a class="btn btn-outline" href="/resume.pdf" target="_blank">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+        Download Full Resume (PDF)
+      </a>
+    </div>
+  </section>
+
+  <!-- ── CONTACT ── -->
+  <section id="contact">
+    <p class="section-label">// contact</p>
+    <h2>Get in Touch</h2>
+    <p style="max-width:480px; margin-bottom:1.25rem;">
+      Open to internships, collaborations, and interesting conversations.
+      Drop me a message — I usually respond within a day.
+    </p>
+    <div class="contact-grid">
+      <a class="contact-card" href="https://github.com/ARYAN-04" target="_blank">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+        </div>
+        <div class="contact-text">
+          <div class="contact-label">GitHub</div>
+          <div class="contact-value">ARYAN-04</div>
+        </div>
+      </a>
+      <a class="contact-card" href="https://linkedin.com/in/aryan-dwivedi-5905a51ba/" target="_blank">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </div>
+        <div class="contact-text">
+          <div class="contact-label">LinkedIn</div>
+          <div class="contact-value">aryan-dwivedi</div>
+        </div>
+      </a>
+      <a class="contact-card" href="mailto:aryandwivedi208@gmail.com">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        </div>
+        <div class="contact-text">
+          <div class="contact-label">Email</div>
+          <div class="contact-value">aryandwivedi208@gmail.com</div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  built with HTML/CSS/JS · deployed on GitHub Pages · &copy; <span id="year"></span> ARYAN-04
+</footer>
+
+<script>
+const GH_USER = 'ARYAN-04';
+const LANG_COLORS = {
+  Python:'#3572A5', JavaScript:'#f1e05a', TypeScript:'#3178c6',
+  Go:'#00ADD8', Rust:'#dea584', Java:'#b07219', C:'#555555',
+  'C++':'#f34b7d', HTML:'#e34c26', CSS:'#563d7c', Shell:'#89e051',
+  'Jupyter Notebook':'#DA5B0B', Vue:'#41b883', Ruby:'#701516',
+  Swift:'#F05138', Kotlin:'#A97BFF', Dart:'#00B4AB'
+};
+
+document.getElementById('year').textContent = new Date().getFullYear();
+
+async function ghFetch(path) {
+  const r = await fetch(`https://api.github.com${path}`, {
+    headers: { Accept: 'application/vnd.github+json' }
+  });
+  if (!r.ok) throw new Error(r.status);
+  return r.json();
+}
+
+function langColor(lang) {
+  return LANG_COLORS[lang] || '#8b949e';
+}
+
+function makePill(text, type='topic', lang=null) {
+  const el = document.createElement('span');
+  el.className = 'pill';
+  if (type === 'lang') {
+    const dot = document.createElement('span');
+    dot.className = 'pill-dot';
+    dot.style.background = lang ? langColor(lang) : '#8b949e';
+    el.appendChild(dot);
+    el.style.background = 'color-mix(in srgb, '+langColor(lang)+' 14%, transparent)';
+    el.style.color = '#cdd6f4';
+    el.style.border = '1px solid color-mix(in srgb, '+langColor(lang)+' 28%, transparent)';
+  } else {
+    el.className += ' pill-topic';
+  }
+  el.appendChild(document.createTextNode(text));
+  return el;
+}
+
+async function loadGhStats() {
+  try {
+    const user = await ghFetch(`/users/${GH_USER}`);
+    const container = document.getElementById('gh-stats');
+    container.innerHTML = `
+      <div style="display:flex;flex-wrap:wrap;gap:0.75rem;">
+        <div class="stat-card">
+          <div class="stat-label">Public Repos</div>
+          <div class="stat-value">${user.public_repos}</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Followers</div>
+          <div class="stat-value">${user.followers}</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Following</div>
+          <div class="stat-value">${user.following}</div>
+        </div>
+      </div>
+    `;
+  } catch(e) {
+    document.getElementById('gh-stats').innerHTML =
+      '<div class="api-error">Could not load GitHub stats (API rate limit?)</div>';
+  }
+}
+
+async function loadLanguages() {
+  try {
+    const repos = await ghFetch(`/users/${GH_USER}/repos?per_page=100&sort=pushed`);
+    const langTotals = {};
+    await Promise.all(repos.filter(r => !r.fork).map(async r => {
+      try {
+        const langs = await ghFetch(`/repos/${GH_USER}/${r.name}/languages`);
+        for (const [l, b] of Object.entries(langs)) {
+          langTotals[l] = (langTotals[l] || 0) + b;
+        }
+      } catch {}
+    }));
+
+    const total = Object.values(langTotals).reduce((a,b)=>a+b,0);
+    const sorted = Object.entries(langTotals).sort((a,b)=>b[1]-a[1]).slice(0,8);
+    const container = document.getElementById('lang-bar-container');
+
+    const bar = document.createElement('div');
+    bar.className = 'lang-bar';
+    const legend = document.createElement('div');
+    legend.className = 'lang-legend';
+
+    sorted.forEach(([lang, bytes]) => {
+      const pct = bytes / total * 100;
+      const seg = document.createElement('div');
+      seg.className = 'lang-bar-seg';
+      seg.style.cssText = `flex:${pct};background:${langColor(lang)};`;
+      seg.title = `${lang}: ${pct.toFixed(1)}%`;
+      bar.appendChild(seg);
+
+      const li = document.createElement('div');
+      li.className = 'lang-legend-item';
+      li.innerHTML = `<span class="lang-legend-dot" style="background:${langColor(lang)}"></span>${lang} <span style="color:var(--overlay1)">${pct.toFixed(1)}%</span>`;
+      legend.appendChild(li);
+    });
+
+    container.innerHTML = '';
+    container.appendChild(bar);
+    container.appendChild(legend);
+  } catch(e) {
+    document.getElementById('lang-bar-container').innerHTML =
+      '<div class="api-error">Could not load language data</div>';
+  }
+}
+
+async function loadProjects() {
+  const grid = document.getElementById('projects-grid');
+  try {
+    const repos = await ghFetch(`/users/${GH_USER}/repos?per_page=100&sort=pushed`);
+    const own = repos.filter(r => !r.fork && r.description)
+                     .sort((a,b) => b.stargazers_count - a.stargazers_count)
+                     .slice(0, 8);
+
+    if (!own.length) {
+      grid.innerHTML = '<div class="api-error">No public repos found.</div>';
+      return;
+    }
+
+    grid.innerHTML = '';
+    for (const repo of own) {
+      let langData = {};
+      try { langData = await ghFetch(`/repos/${GH_USER}/${repo.name}/languages`); } catch {}
+
+      const card = document.createElement('a');
+      card.className = 'project-card fade-in';
+      card.href = repo.html_url;
+      card.target = '_blank';
+      card.rel = 'noopener';
+
+      // header
+      const header = document.createElement('div');
+      header.className = 'project-header';
+      const nameEl = document.createElement('div');
+      nameEl.className = 'project-name';
+      nameEl.textContent = repo.name;
+      const iconSvg = document.createElementNS('http://www.w3.org/2000/svg','svg');
+      iconSvg.setAttribute('width','14'); iconSvg.setAttribute('height','14');
+      iconSvg.setAttribute('viewBox','0 0 24 24'); iconSvg.setAttribute('fill','none');
+      iconSvg.setAttribute('stroke','currentColor'); iconSvg.setAttribute('stroke-width','2');
+      iconSvg.innerHTML = '<path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/>';
+      iconSvg.style.color = 'var(--overlay1)';
+      header.appendChild(nameEl);
+      header.appendChild(iconSvg);
+      card.appendChild(header);
+
+      // description
+      const desc = document.createElement('div');
+      desc.className = 'project-desc';
+      desc.textContent = repo.description || '';
+      card.appendChild(desc);
+
+      // pills: languages
+      const pills = document.createElement('div');
+      pills.className = 'project-pills';
+      const topLangs = Object.keys(langData).slice(0, 3);
+      topLangs.forEach(l => pills.appendChild(makePill(l, 'lang', l)));
+      // topics
+      if (repo.topics && repo.topics.length) {
+        repo.topics.slice(0, 4).forEach(t => pills.appendChild(makePill(t, 'topic')));
+      }
+      card.appendChild(pills);
+
+      // meta: stars, forks, updated
+      const meta = document.createElement('div');
+      meta.className = 'project-meta';
+      const updated = new Date(repo.pushed_at).toLocaleDateString('en-GB',{month:'short',year:'numeric'});
+      meta.innerHTML = `
+        <span title="Stars">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          ${repo.stargazers_count}
+        </span>
+        <span title="Forks">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M6 9v3a3 3 0 0 0 3 3h3M18 9V6"/></svg>
+          ${repo.forks_count}
+        </span>
+        <span title="Last push">${updated}</span>
+      `;
+      card.appendChild(meta);
+
+      grid.appendChild(card);
+    }
+  } catch(e) {
+    grid.innerHTML = '<div class="api-error">Could not load projects (GitHub API rate limit?)<br>Try refreshing in a minute.</div>';
+  }
+}
+
+// kick off all fetches
+loadGhStats();
+loadLanguages();
+loadProjects();
+</script>
+</body>
+</html>
