@@ -6,36 +6,36 @@
 <title>ARYAN-04 — Portfolio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Sora:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 <style>
-  /* ── Catppuccin Mocha ── */
+  /* ── Pastel Red + Dark Grey ── */
   :root {
-    --base:    #1e1e2e;
-    --mantle:  #181825;
-    --crust:   #11111b;
-    --surface0:#313244;
-    --surface1:#45475a;
-    --surface2:#585b70;
-    --overlay0:#6c7086;
-    --overlay1:#7f849c;
-    --overlay2:#9399b2;
-    --subtext0:#a6adc8;
-    --subtext1:#bac2de;
-    --text:    #cdd6f4;
-    --lavender:#b4befe;
-    --blue:    #89b4fa;
-    --sapphire:#74c7ec;
-    --sky:     #89dceb;
-    --teal:    #94e2d5;
+    --base:    #1a1a1a;
+    --mantle:  #141414;
+    --crust:   #0f0f0f;
+    --surface0:#272727;
+    --surface1:#333333;
+    --surface2:#404040;
+    --overlay0:#5a5a5a;
+    --overlay1:#707070;
+    --overlay2:#909090;
+    --subtext0:#aaaaaa;
+    --subtext1:#c4c4c4;
+    --text:    #e8e8e8;
+    --accent:  #FF746C;
+    --accent-dim:#cc5d56;
+    --accent-soft:rgba(255,116,108,0.12);
+    --accent-border:rgba(255,116,108,0.28);
+    /* legacy aliases */
+    --mauve:   #FF746C;
+    --lavender:#ffa09a;
+    --blue:    #FF9590;
+    --sapphire:#ff9e97;
     --green:   #a6e3a1;
     --yellow:  #f9e2af;
     --peach:   #fab387;
-    --maroon:  #eba0ac;
-    --red:     #f38ba8;
-    --mauve:   #cba6f7;
-    --pink:    #f5c2e7;
-    --flamingo:#f2cdcd;
-    --rosewater:#f5e0dc;
+    --red:     #FF746C;
+    --pink:    #ffb3af;
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -45,7 +45,7 @@
   body {
     background: var(--base);
     color: var(--text);
-    font-family: 'Sora', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
     font-size: 15px;
     line-height: 1.7;
     min-height: 100vh;
@@ -56,9 +56,9 @@
     content: '';
     position: fixed;
     inset: 0;
-    background-image: radial-gradient(circle, var(--surface0) 1px, transparent 1px);
+    background-image: radial-gradient(circle, var(--surface1) 1px, transparent 1px);
     background-size: 28px 28px;
-    opacity: 0.35;
+    opacity: 0.25;
     pointer-events: none;
     z-index: 0;
   }
@@ -123,10 +123,24 @@
   .section-label {
     font-family: 'JetBrains Mono', monospace;
     font-size: 11px;
-    letter-spacing: 0.2em;
-    color: var(--mauve);
+    letter-spacing: 0.18em;
+    color: var(--accent);
     text-transform: uppercase;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.6rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    opacity: 0.85;
+  }
+
+  .section-label::before {
+    content: '';
+    display: inline-block;
+    width: 14px;
+    height: 2px;
+    background: var(--accent);
+    border-radius: 2px;
+    flex-shrink: 0;
   }
 
   h1 {
@@ -139,27 +153,11 @@
 
   h1 .accent { color: var(--mauve); }
 
-  h2 {
-    font-size: 1.5rem;
-    font-weight: 500;
-    color: var(--text);
-    margin-bottom: 2rem;
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-  }
-
-  h2::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: var(--surface1);
-  }
 
   p { color: var(--subtext1); margin-bottom: 1rem; }
   p:last-child { margin-bottom: 0; }
 
-  a { color: var(--blue); text-decoration: none; }
+  a { color: var(--accent); text-decoration: none; }
   a:hover { color: var(--lavender); }
 
   /* ── HERO ── */
@@ -239,7 +237,7 @@
   .lang-html         { background:#e34c26; }
   .lang-css          { background:#563d7c; }
   .lang-shell        { background:#89e051; }
-  .lang-jupyter      { background:#DA5B0B; }
+  .lang-jupyter      { background:#3572A5; }
   .lang-default      { background:#8b949e; }
 
   /* topic badge colours */
@@ -425,7 +423,8 @@
 
   .resume-org {
     font-size: 13px;
-    color: var(--blue);
+    color: var(--accent);
+    opacity: 0.9;
   }
 
   .resume-detail {
@@ -541,7 +540,7 @@
 
   /* cursor blink */
   @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
-  .cursor { animation: blink 1s step-end infinite; color: var(--mauve); }
+  .cursor { animation: blink 1s step-end infinite; color: var(--accent); }
 
   /* fade-in on section */
   @keyframes fadeUp {
@@ -567,7 +566,6 @@
 
   <!-- ── HERO ── -->
   <section id="hero">
-    <p class="section-label">// hello world</p>
     <h1>Hey, I'm <span class="accent">Aryan</span><br>I build things.</h1>
     <p style="max-width:560px; font-size:16px;">
       An undergraduate student based in New Delhi, currently looking for summer internship opportunities in AI and Data roles.
@@ -585,9 +583,8 @@
 
   <!-- ── ABOUT ── -->
   <section id="about">
-    <p class="section-label">// about_me</p>
-    <h2>About</h2>
-    <p style="max-width:620px; margin-bottom:2rem;">
+    <p class="section-label">about me</p>
+    <p style="max-width:620px; margin-bottom:2rem; margin-top:1.25rem;">
       B.Tech CSE (AI/ML) student at Maharaja Surajmal Institute of Technology, New Delhi. I've interned at PwC designing AI frameworks and at Airports Authority of India working in cybersecurity operations. I build data pipelines, containerised systems, and backend tooling.
     </p>
 
@@ -597,12 +594,12 @@
       </div>
     </div>
 
-    <p class="section-label" style="margin-bottom:0.75rem;">// languages_across_repos</p>
+    <p class="section-label" style="margin-bottom:0.75rem;">languages across repos</p>
     <div id="lang-bar-container" class="lang-bar-wrap">
       <div class="loading-card" style="height:60px;">fetching language data…</div>
     </div>
 
-    <p class="section-label" style="margin-top:2rem; margin-bottom:0.75rem;">// tech_stack</p>
+    <p class="section-label" style="margin-top:2rem; margin-bottom:0.75rem;">tech stack</p>
     <div class="skills-grid" id="skills-static">
       <!-- Languages & Scripting -->
       <span class="pill pill-lang"><span class="pill-dot" style="background:#3572A5"></span>Python</span>
@@ -638,19 +635,17 @@
 
   <!-- ── PROJECTS ── -->
   <section id="projects">
-    <p class="section-label">// projects</p>
-    <h2>Projects</h2>
-    <div id="projects-grid" class="projects-grid">
+    <p class="section-label">projects</p>
+    <div id="projects-grid" class="projects-grid" style="margin-top:1.25rem;">
       <div class="loading-card">fetching repos from github…</div>
     </div>
   </section>
 
   <!-- ── RESUME ── -->
   <section id="resume">
-    <p class="section-label">// resume</p>
-    <h2>Resume</h2>
+    <p class="section-label">resume</p>
 
-    <div class="resume-section">
+    <div class="resume-section" style="margin-top:1.25rem;">
       <h3>Education</h3>
       <div class="resume-item">
         <div class="resume-item-header">
@@ -726,9 +721,8 @@
 
   <!-- ── CONTACT ── -->
   <section id="contact">
-    <p class="section-label">// contact</p>
-    <h2>Get in Touch</h2>
-    <p style="max-width:480px; margin-bottom:1.25rem;">
+    <p class="section-label">contact</p>
+    <p style="max-width:480px; margin-bottom:1.25rem; margin-top:1.25rem;">
       Open to internships, collaborations, and interesting conversations.
       Drop me a message — I usually respond within a day.
     </p>
@@ -775,9 +769,15 @@ const LANG_COLORS = {
   Python:'#3572A5', JavaScript:'#f1e05a', TypeScript:'#3178c6',
   Go:'#00ADD8', Rust:'#dea584', Java:'#b07219', C:'#555555',
   'C++':'#f34b7d', HTML:'#e34c26', CSS:'#563d7c', Shell:'#89e051',
-  'Jupyter Notebook':'#DA5B0B', Vue:'#41b883', Ruby:'#701516',
+  'Jupyter Notebook':'#3572A5', Vue:'#41b883', Ruby:'#701516',
   Swift:'#F05138', Kotlin:'#A97BFF', Dart:'#00B4AB'
 };
+
+// Jupyter Notebook is not a real language — remap it to Python
+function remapLang(lang) {
+  if (lang === 'Jupyter Notebook') return 'Python';
+  return lang;
+}
 
 document.getElementById('year').textContent = new Date().getFullYear();
 
@@ -850,8 +850,13 @@ async function loadLanguages() {
       } catch {}
     }));
 
-    const total = Object.values(langTotals).reduce((a,b)=>a+b,0);
-    const sorted = Object.entries(langTotals).sort((a,b)=>b[1]-a[1]).slice(0,8);
+    const merged = {};
+    for (const [lang, bytes] of Object.entries(langTotals)) {
+      const key = lang === 'Jupyter Notebook' ? 'Python' : lang;
+      merged[key] = (merged[key] || 0) + bytes;
+    }
+    const total = Object.values(merged).reduce((a,b)=>a+b,0);
+    const sorted = Object.entries(merged).sort((a,b)=>b[1]-a[1]).slice(0,8);
     const container = document.getElementById('lang-bar-container');
 
     const bar = document.createElement('div');
@@ -931,8 +936,17 @@ async function loadProjects() {
       // pills: languages
       const pills = document.createElement('div');
       pills.className = 'project-pills';
-      const topLangs = Object.keys(langData).slice(0, 3);
-      topLangs.forEach(l => pills.appendChild(makePill(l, 'lang', l)));
+      // Deduplicate after remapping (Jupyter Notebook → Python)
+      const seenLangs = new Set();
+      const topLangs = Object.keys(langData).slice(0, 5);
+      for (const l of topLangs) {
+        const mapped = remapLang(l);
+        if (!seenLangs.has(mapped)) {
+          seenLangs.add(mapped);
+          pills.appendChild(makePill(mapped, 'lang', mapped));
+          if (seenLangs.size >= 3) break;
+        }
+      }
       // topics
       if (repo.topics && repo.topics.length) {
         repo.topics.slice(0, 4).forEach(t => pills.appendChild(makePill(t, 'topic')));
