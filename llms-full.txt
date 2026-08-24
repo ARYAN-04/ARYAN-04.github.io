@@ -1,0 +1,106 @@
+# Aryan Dwivedi - Complete Portfolio & Resume Corpus
+
+> B.Tech Computer Science and Engineering (Artificial Intelligence & Machine Learning) student at Maharaja Surajmal Institute of Technology (MSIT, GGSIPU), New Delhi (2023 - 2027). Specializing in data engineering pipelines, machine learning systems, and backend developer tooling with Python, Golang, and cloud infrastructure.
+
+## Contact & Online Profiles
+- **Full Name**: Aryan Dwivedi
+- **Location**: New Delhi, India
+- **Email**: aryandwivedi208@gmail.com
+- **Website**: https://aryan-04.github.io/
+- **GitHub**: https://github.com/ARYAN-04
+- **X (Twitter)**: https://x.com/aryand208
+- **LinkedIn**: https://linkedin.com/in/aryan-dwivedi-5905a51ba/
+
+---
+
+## Education
+
+### Bachelor of Technology in Computer Science & Engineering (AI & ML)
+- **Institution**: Maharaja Surajmal Institute of Technology (MSIT, GGSIPU), New Delhi
+- **Duration**: 2023 – 2027 (Expected graduation: June 2027)
+- **Cumulative GPA**: 8.94 / 10.0
+- **Relevant Coursework**: Data Structures & Algorithms, Object-Oriented Programming (OOP), Database Management Systems (DBMS), Operating Systems, Computer Networks, Machine Learning, Deep Learning, Natural Language Processing (NLP), Probability & Statistics, Linear Algebra, Cloud Computing.
+
+---
+
+## Technical Skills & Tooling
+
+- **Programming Languages**: Python, Golang, SQL (PostgreSQL, SQLite), Bash / Shell Scripting, JavaScript, TypeScript, HTML5, CSS3.
+- **Machine Learning & AI**: Pandas, NumPy, Scikit-learn, TensorFlow, Keras, NLTK, LSTM Neural Networks, Exploratory Data Analysis (EDA), Feature Engineering, Model Evaluation Metrics.
+- **Data Engineering & Visualization**: ETL Pipelines, Data Preprocessing, Matplotlib, Plotly, Recharts, Power BI, Advanced Excel.
+- **Cloud, Infrastructure & DevOps**: Docker, Kubernetes (Basics), Linux System Administration, Systemd Services, GitHub Actions (CI/CD), AWS (S3, EC2), uv (Python package manager).
+- **Developer Tools & Workflows**: Git, GitHub, VS Code, Zed Editor, Jupyter Notebooks, Agentic Coding Workflows.
+
+---
+
+## Detailed Project Portfolio
+
+### 1. Yellow (`yellow`)
+- **Repository**: https://github.com/ARYAN-04/yellow
+- **Primary Tech**: Go (Golang), TypeScript, SQLite
+- **Architecture & Highlights**:
+  - High-performance tournament and bracket management engine with deterministic pairing algorithms.
+  - Implemented secure admin middleware authentication and relational schema with SQLite foreign key constraints.
+  - Automated participant check-in workflows and live match state management.
+
+### 2. FIFA Watch-Along (`fifa-watch-along`)
+- **Repository**: https://github.com/ARYAN-04/fifa-watch-along
+- **Primary Tech**: Python, TypeScript, Machine Learning, NLP
+- **Architecture & Highlights**:
+  - Real-time match telemetry stream and live commentary companion platform.
+  - Retrained ML time-decay weighting model to dynamically balance live sentiment and match importance.
+  - Responsive web interface featuring live telemetry cards and match stream updates.
+
+### 3. Aviation Load Factor Analysis (`aviation-load-factor-analysis`)
+- **Repository**: https://github.com/ARYAN-04/aviation-load-factor-analysis
+- **Primary Tech**: Python, Pandas, Jupyter, Streamlit, Scikit-learn
+- **Architecture & Highlights**:
+  - Predictive modeling pipeline analyzing commercial aviation seat occupancy factors and route profitability.
+  - Refactored monolithic notebook data pipelines into modular Python packages.
+  - Built an interactive Streamlit analytics dashboard for real-time scenario simulation and parameter exploration.
+
+### 4. Health Monitor Daemon (`health_monitor_daemon_project`)
+- **Repository**: https://github.com/ARYAN-04/health_monitor_daemon_project
+- **Primary Tech**: Python, Linux Systemd, Bash
+- **Architecture & Highlights**:
+  - Background monitoring daemon tracking server telemetry, CPU utilization, memory thresholds, and disk I/O.
+  - Configured automated alerting and structured log rotation for headless Linux server environments.
+
+### 5. Stock Pricer LSTM (`stock_pricer_LSTM`)
+- **Repository**: https://github.com/ARYAN-04/stock_pricer_LSTM
+- **Primary Tech**: Python, TensorFlow, Keras, LSTM
+- **Architecture & Highlights**:
+  - Deep learning sequential model predicting historical stock price trajectories using Long Short-Term Memory (LSTM) recurrent networks.
+  - Incorporated time-series normalization, sliding window preprocessing, and visual error loss convergence tracking.
+
+---
+
+## Professional & Academic Experience
+
+### Internships & Technical Experience
+- **Grant Thornton Bharat LLP** — Analytics & Advisory Intern
+  - Assisted in structured data modeling, financial reporting workflows, and analytics tasks using SQL and Excel.
+- **PricewaterhouseCoopers (PwC) India** — Technology Consulting Intern
+  - Evaluated enterprise business processes, data flow architectures, and database structures.
+- **Airports Authority of India (AAI)** — Engineering Intern
+  - Studied operational aviation infrastructure, communication protocols, and server infrastructure.
+
+---
+
+## Leadership & Extracurricular Activities
+
+- **Operational Lead, Google Developer Student Club (GDSC MSIT)**:
+  - Spearheaded hands-on workshops and bootcamps covering machine learning foundations, NLP algorithms, and open-source tooling for campus engineering students.
+- **Tournament Director, MSIT Fundraiser Debate 2024**:
+  - Led operations, event marketing, and delegate logistics for an inter-college fundraiser tournament, successfully raising ₹38,000 for Women Empowerment initiatives.
+- **Vice President, Debating Society MSIT**:
+  - Mentored junior debaters in Parliamentary and Asian Parliamentary debate formats; represented MSIT across university debating circuits.
+
+---
+
+## Site Pages Structure
+- `https://aryan-04.github.io/index.html` (Homepage: Bio, Pinned Repos, Interactive Theme & Location Bento, Recent Commits Feed)
+- `https://aryan-04.github.io/about.html` (About: Full Bio, Facts Table, Tech Stack Breakdown, Leadership PORs)
+- `https://aryan-04.github.io/projects.html` (Projects: Dynamic catalogue of all non-fork public repositories with multi-language distribution metrics)
+- `https://aryan-04.github.io/resume.html` (Resume: Comprehensive Curriculum Vitae and download link to resume.pdf)
+- `https://aryan-04.github.io/contact.html` (Contact: Direct email and social communication links)

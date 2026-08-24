@@ -1,0 +1,10 @@
+# Robots.txt for https://aryan-04.github.io/
+User-agent: *
+Allow: /
+
+# LLM & AI Agents:
+# - Concise summary: https://aryan-04.github.io/llms.txt
+# - Full corpus & resume: https://aryan-04.github.io/llms-full.txt
+
+# Sitemap
+Sitemap: https://aryan-04.github.io/sitemap.xml

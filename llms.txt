@@ -1,0 +1,69 @@
+# Aryan Dwivedi - Developer Portfolio
+
+> B.Tech Computer Science and Engineering (AI & ML) student at Maharaja Surajmal Institute of Technology (MSIT, GGSIPU), New Delhi (2023 - 2027). Specializing in data engineering pipelines, machine learning systems, and backend developer tooling with Python, Golang, and cloud infrastructure.
+
+## Core Profile
+- **Full Name**: Aryan Dwivedi
+- **Location**: New Delhi, India
+- **Education**: B.Tech CSE (Artificial Intelligence & Machine Learning), MSIT (CGPA: 8.94 / 10.0)
+- **Website**: https://aryan-04.github.io/
+- **GitHub**: https://github.com/ARYAN-04
+- **X (Twitter)**: https://x.com/aryand208
+- **LinkedIn**: https://linkedin.com/in/aryan-dwivedi-5905a51ba/
+- **Email**: aryandwivedi208@gmail.com
+
+---
+
+## Technical Stack & Competencies
+
+### Programming Languages & Frameworks
+- **Languages**: Python, Golang, SQL, Bash / Shell Scripting, JavaScript, TypeScript, HTML/CSS
+- **Machine Learning & Data Science**: Pandas, NumPy, Scikit-learn, TensorFlow, NLTK, Matplotlib, Plotly, Recharts, Jupyter
+- **Backend & Cloud Infrastructure**: Docker, Kubernetes, Linux, AWS, GitHub Actions CI/CD, uv, PostgreSQL, SQLite, ETL Pipelines
+- **Developer Tooling**: Git, VS Code, Power BI, Excel, Agentic Coding Workflows
+
+---
+
+## Key Projects
+
+### 1. Yellow (`yellow`)
+- **Repository**: https://github.com/ARYAN-04/yellow
+- **Tech**: Go, TypeScript, SQLite
+- **Description**: Lightweight tournament and bracket management engine with deterministic pairing algorithms and admin middleware authorization.
+
+### 2. FIFA Watch-Along (`fifa-watch-along`)
+- **Repository**: https://github.com/ARYAN-04/fifa-watch-along
+- **Tech**: Python, TypeScript, Machine Learning, NLP
+- **Description**: Real-time match telemetry stream and watch-along platform with trained sentiment and time-decay prediction models.
+
+### 3. Aviation Load Factor Analysis (`aviation-load-factor-analysis`)
+- **Repository**: https://github.com/ARYAN-04/aviation-load-factor-analysis
+- **Tech**: Python, Jupyter, Pandas, Streamlit
+- **Description**: Predictive modeling and analytics dashboard exploring airline seat occupancy factors and route optimization metrics.
+
+### 4. Health Monitor Daemon (`health_monitor_daemon_project`)
+- **Repository**: https://github.com/ARYAN-04/health_monitor_daemon_project
+- **Tech**: Python, Linux Systemd, Shell
+- **Description**: Background monitoring service tracking real-time server telemetry, memory, and CPU metrics with automated alerting.
+
+### 5. Stock Pricer LSTM (`stock_pricer_LSTM`)
+- **Repository**: https://github.com/ARYAN-04/stock_pricer_LSTM
+- **Tech**: Python, TensorFlow, LSTM Neural Networks
+- **Description**: Deep learning sequential model predicting historical stock price trajectories using Long Short-Term Memory architectures.
+
+---
+
+## Leadership & Experience
+
+- **Operational Lead, Google Developer Student Club (GDSC MSIT)**: Organized technical workshops on machine learning architectures, NLP pipelines, and developer tooling for campus developers.
+- **Tournament Director, MSIT Fundraiser Debate 2024**: Managed tournament operations and raised ₹38,000 in support of Women Empowerment initiatives.
+- **Vice President, Debating Society MSIT**: Trained members in parliamentary debate formats and represented the institution across the inter-college circuit.
+
+---
+
+## Site Pages
+- [Home](https://aryan-04.github.io/index.html): Overview, hero bio, 2 pinned projects, theme picker, location widget, and live GitHub commit feed.
+- [About](https://aryan-04.github.io/about.html): Background, education details, full technical stack, and positions of responsibility.
+- [Projects](https://aryan-04.github.io/projects.html): Dynamic catalogue of all open-source repositories and language distribution analytics.
+- [Resume](https://aryan-04.github.io/resume.html): Detailed curriculum vitae, courseworks, certifications, and PDF download link.
+- [Contact](https://aryan-04.github.io/contact.html): Communication channels, social profiles, and direct email link.
