@@ -80,7 +80,7 @@
   function initTheme() {
     const savedTheme = localStorage.getItem('portfolio-theme') || 'zed-dark';
     const savedAccent = localStorage.getItem('portfolio-accent') || '#FF746C';
-    const savedBgEffect = localStorage.getItem('portfolio-bg-effect') !== 'false';
+    const savedBgEffect = localStorage.getItem('portfolio-bg-effect') === 'true';
 
     applyTheme(savedTheme);
     applyAccent(savedAccent);
